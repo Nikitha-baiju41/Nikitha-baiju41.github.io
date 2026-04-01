@@ -1,97 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Nikitha baiju | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikitha Baiju | Developer</title>
 
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff6a00);
-      background-size: 400% 400%;
-      animation: gradient 8s ease infinite;
-      color: white;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  background: #020617;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
 
-    @keyframes gradient {
-      0% {background-position: 0%;}
-      50% {background-position: 100%;}
-      100% {background-position: 0%;}
-    }
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+}
 
-    .section {
-      padding: 80px 20px;
-    }
+nav h2 {
+  font-family: 'Orbitron';
+  color: #00f7ff;
+}
 
-    .card {
-      background: rgba(255,255,255,0.1);
-      margin: 20px;
-      padding: 20px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
 
-    .card:hover {
-      transform: scale(1.05);
-    }
+/* Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-    h1 {
-      font-size: 40px;
-    }
-  </style>
+.hero h1 {
+  font-size: 55px;
+}
+
+.hero span {
+  color: #00f7ff;
+  text-shadow: 0 0 20px #00f7ff;
+}
+
+.hero p {
+  opacity: 0.7;
+}
+
+/* Section */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  color: #00f7ff;
+}
+
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.05);
+  margin: 20px;
+  padding: 25px;
+  width: 220px;
+  border-radius: 15px;
+  display: inline-block;
+  transition: 0.3s;
+  border: 1px solid rgba(0,255,255,0.2);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #00f7ff;
+}
+
+/* Button */
+.btn {
+  padding: 10px 25px;
+  background: #00f7ff;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* Glow line */
+.line {
+  width: 100px;
+  height: 3px;
+  background: #00f7ff;
+  margin: 10px auto;
+  box-shadow: 0 0 10px #00f7ff;
+}
+</style>
 </head>
 
 <body>
 
-<!-- Typing Animation -->
-<h1 id="typing"></h1>
+<nav>
+  <h2>NIKITHA</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+  </div>
+</nav>
 
-<div class="section" data-aos="fade-up">
+<section class="hero">
+  <div>
+    <h1>Hi, I'm <span>Nikitha</span></h1>
+    <p>Flutter Developer | Tech Enthusiast</p>
+    <a href="#projects" class="btn">Explore Work</a>
+  </div>
+</section>
+
+<section id="about" class="section">
   <h2>About Me</h2>
-  <p>I am a BTech student passionate about Flutter development.</p>
-</div>
+  <div class="line"></div>
+  <p>I build modern apps using Flutter and love exploring new tech.</p>
+</section>
 
-<div class="section" data-aos="fade-up">
+<section class="section">
   <h2>Skills</h2>
-  <div class="card">Flutter</div>
-  <div class="card">PostgreSQL</div>
-  <div class="card">Frontend</div>
-</div>
+  <div class="line"></div>
+  <div>
+    <div class="card">Flutter</div>
+    <div class="card">Dart</div>
+    <div class="card">PostgreSQL</div>
+    <div class="card">Frontend</div>
+  </div>
+</section>
 
-<div class="section" data-aos="fade-up">
+<section id="projects" class="section">
   <h2>Projects</h2>
-  <div class="card">Bank App UI</div>
-  <div class="card">Mini Database Project</div>
-</div>
+  <div class="line"></div>
+  <div>
+    <div class="card">Bank App UI</div>
+    <div class="card">Mini DB System</div>
+  </div>
+</section>
 
-<div class="section" data-aos="fade-up">
+<section class="section">
   <h2>Contact</h2>
+  <div class="line"></div>
   <p>Email: nairnisha346@gmail.com</p>
-</div>
-
-<!-- AOS Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-
-  // Typing effect
-  let text = "Hi, I'm Nikitha ";
-  let i = 0;
-
-  function type() {
-    if (i < text.length) {
-      document.getElementById("typing").innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type, 100);
-    }
-  }
-  type();
-</script>
+</section>
 
 </body>
-</html>              
+</html>

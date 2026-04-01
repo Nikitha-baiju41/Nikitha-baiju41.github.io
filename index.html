@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nikitha baiju | Portfolio</title>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff6a00);
+      background-size: 400% 400%;
+      animation: gradient 8s ease infinite;
+      color: white;
+      text-align: center;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0%;}
+      50% {background-position: 100%;}
+      100% {background-position: 0%;}
+    }
+
+    .section {
+      padding: 80px 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Typing Animation -->
+<h1 id="typing"></h1>
+
+<div class="section" data-aos="fade-up">
+  <h2>About Me</h2>
+  <p>I am a BTech student passionate about Flutter development.</p>
+</div>
+
+<div class="section" data-aos="fade-up">
+  <h2>Skills</h2>
+  <div class="card">Flutter</div>
+  <div class="card">PostgreSQL</div>
+  <div class="card">Frontend</div>
+</div>
+
+<div class="section" data-aos="fade-up">
+  <h2>Projects</h2>
+  <div class="card">Bank App UI</div>
+  <div class="card">Mini Database Project</div>
+</div>
+
+<div class="section" data-aos="fade-up">
+  <h2>Contact</h2>
+  <p>Email: nairnisha346@gmail.com</p>
+</div>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  // Typing effect
+  let text = "Hi, I'm Nikitha ";
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, 100);
+    }
+  }
+  type();
+</script>
+
+</body>
+</html>              

@@ -3,9 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nikitha Baiju | Developer</title>
+<title>Nikitha Baiju| Developer</title>
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 body {
@@ -29,15 +33,28 @@ nav h2 {
   color: #00f7ff;
 }
 
-nav a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
+/* Icon Menu */
+.menu {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.menu i {
+  font-size: 28px;
+  margin: 15px;
+  cursor: pointer;
+  color: #00f7ff;
+  transition: 0.3s;
+}
+
+.menu i:hover {
+  transform: scale(1.3);
+  text-shadow: 0 0 15px #00f7ff;
 }
 
 /* Hero */
 .hero {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +62,7 @@ nav a {
 }
 
 .hero h1 {
-  font-size: 55px;
+  font-size: 50px;
 }
 
 .hero span {
@@ -53,13 +70,9 @@ nav a {
   text-shadow: 0 0 20px #00f7ff;
 }
 
-.hero p {
-  opacity: 0.7;
-}
-
-/* Section */
+/* Sections */
 .section {
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
@@ -70,10 +83,10 @@ nav a {
 /* Cards */
 .card {
   background: rgba(255,255,255,0.05);
-  margin: 20px;
-  padding: 25px;
-  width: 220px;
-  border-radius: 15px;
+  margin: 15px;
+  padding: 20px;
+  width: 200px;
+  border-radius: 12px;
   display: inline-block;
   transition: 0.3s;
   border: 1px solid rgba(0,255,255,0.2);
@@ -81,81 +94,94 @@ nav a {
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 25px #00f7ff;
+  box-shadow: 0 0 20px #00f7ff;
 }
 
-/* Button */
-.btn {
-  padding: 10px 25px;
-  background: #00f7ff;
-  color: black;
-  border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 20px;
+/* Hidden sections */
+.hidden {
+  display: none;
 }
 
-/* Glow line */
+/* Line */
 .line {
-  width: 100px;
+  width: 80px;
   height: 3px;
   background: #00f7ff;
   margin: 10px auto;
-  box-shadow: 0 0 10px #00f7ff;
 }
 </style>
 </head>
 
 <body>
 
+<!-- Navbar -->
 <nav>
   <h2>NIKITHA</h2>
-  <div>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-  </div>
 </nav>
 
+<!-- Hero -->
 <section class="hero">
   <div>
     <h1>Hi, I'm <span>Nikitha</span></h1>
-    <p>Flutter Developer | Tech Enthusiast</p>
-    <a href="#projects" class="btn">Explore Work</a>
+    <p> UI/UX intern | Tech Enthusiast| Flutter beginner|</p>
   </div>
 </section>
 
-<section id="about" class="section">
+<!-- ICON MENU -->
+<div class="menu">
+  <i class="fas fa-user" onclick="showSection('about')"></i>
+  <i class="fas fa-code" onclick="showSection('skills')"></i>
+  <i class="fas fa-laptop" onclick="showSection('projects')"></i>
+  <i class="fas fa-envelope" onclick="showSection('contact')"></i>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="section hidden">
   <h2>About Me</h2>
   <div class="line"></div>
-  <p>I build modern apps using Flutter and love exploring new tech.</p>
+  <p>I am a BTech student passionate about Flutter and building modern apps.</p>
 </section>
 
-<section class="section">
+<!-- SKILLS -->
+<section id="skills" class="section hidden">
   <h2>Skills</h2>
   <div class="line"></div>
   <div>
     <div class="card">Flutter</div>
     <div class="card">Dart</div>
     <div class="card">PostgreSQL</div>
-    <div class="card">Frontend</div>
+    <div class="card">HTML & CSS</div>
   </div>
 </section>
 
-<section id="projects" class="section">
+<!-- PROJECTS -->
+<section id="projects" class="section hidden">
   <h2>Projects</h2>
   <div class="line"></div>
   <div>
     <div class="card">Bank App UI</div>
-    <div class="card">Mini DB System</div>
+    <div class="card">Student Database</div>
   </div>
 </section>
 
-<section class="section">
-  <h2>Contact</h2>
+<!-- CONTACT -->
+<section id="contact" class="section hidden">
+  <h2>Contact- 9207368216</h2>
   <div class="line"></div>
   <p>Email: nairnisha346@gmail.com</p>
 </section>
+
+<!-- SCRIPT -->
+<script>
+function showSection(id) {
+  let sections = document.querySelectorAll('.section');
+  sections.forEach(sec => sec.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+}
+
+// Show About first
+window.onload = () => showSection('about');
+</script>
 
 </body>
 </html>
